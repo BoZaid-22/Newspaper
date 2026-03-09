@@ -7,7 +7,7 @@ from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from .models import Article
 #this module to redirect user to article list after delete any article
 from django.urls import reverse_lazy
-
+from .forms import CommentForms
 # Create your views here.
 
 class ArticleListView(LoginRequiredMixin, ListView):
@@ -17,6 +17,11 @@ class ArticleListView(LoginRequiredMixin, ListView):
 class ArticleDetailView(LoginRequiredMixin, DetailView):
     model = Article
     template_name = 'article_detail.html'
+  
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = CommentForms()
+        return context
 
 class ArticleUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Article
