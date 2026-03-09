@@ -116,11 +116,14 @@ http://127.0.0.1:8000/
 ### Home Page
 ![Home](images/home.png)
 
-### Article Page
-![Article](images/article.png)
+### Articles Page
+![Articles](images/articles.png)
 
 ### Login Page
 ![Login](images/login.png)
+
+### Sign Up Page
+![SignUp](images/sign up.png)
 
 ---
 
